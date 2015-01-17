@@ -12,4 +12,29 @@ angular.module('listing.module', ['listing.services', 'listing.filters'])
       $scope.viewLimit += num;
     };
     $scope.descending = true;
+    $scope.filters = {
+      query: "",
+      tags: [
+        {
+          label: "tag1",
+          selected: false
+        },
+        {
+          label: "tag2",
+          selected: false
+        },
+        {
+          label: "tag3",
+          selected: false
+        },
+        {
+          label: "tag4",
+          selected: false
+        },
+        {
+          label: "tag5",
+          selected: false
+        }
+      ]
+    };
   }]);

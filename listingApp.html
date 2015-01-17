@@ -13,12 +13,18 @@
     <section data-ng-controller="listingCtrl">
       <h1>{{title}}</h1>
       <div class="controls">
-        <input type="text" data-ng-model="query" placeholder="search news" />
+        <input type="text" data-ng-model="filters.query" placeholder="search news" />
         <label for="sortBy">Sort by</label>
         <select id="sortBy" data-ng-model="descending">
           <option value="true">Newest first</option>
           <option value="false">Oldest first</option>
         </select>
+        <div class="clear">
+          <div data-ng-repeat="tag in filters.tags">
+            <label for="{{tag.label}}">{{tag.label}}</label>
+            <input id="{{tag.label}}" type="checkbox" data-ng-checked="tag.selected" />
+          </div>
+        </div>
       </div>
       <ul>
         <li data-ng-repeat="article in articles | newsFilter: filters | orderBy:'pubDate':descending | limitTo: viewLimit">
