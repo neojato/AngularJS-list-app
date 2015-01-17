@@ -12,6 +12,7 @@
     <section data-ng-controller="listingCtrl">
       <h1>{{title}}</h1>
       <div class="controls">
+        <input type="text" data-ng-model="query" placeholder="search news" />
         <label for="sortBy">Sort by</label>
         <select id="sortBy" data-ng-model="descending">
           <option value="true">Newest first</option>
@@ -19,7 +20,7 @@
         </select>
       </div>
       <ul>
-        <li data-ng-repeat="article in articles | orderBy:'pubDate':descending | limitTo: viewLimit">
+        <li data-ng-repeat="article in articles | filter: query | orderBy:'pubDate':descending | limitTo: viewLimit">
           <h2>{{article.title}}</h2>
           <p>{{article.pubDate | date:'dd/MM/yy'}}</p>
           <p>{{article.description}}</p>
