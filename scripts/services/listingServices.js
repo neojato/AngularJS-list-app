@@ -1,6 +1,6 @@
 angular.module('listing.services', [])
   .services('data', ['$http', function($http) {
-    'user strict';
+    'use strict';
     this.get = function(url, callback) {
       $http({ method: 'GET', url: url })
         .success(function(data, status, headers, config) {
