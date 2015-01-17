@@ -1,4 +1,4 @@
-angular.module('listing.module', ['listing.services'])
+angular.module('listing.module', ['listing.services', 'listing.filters'])
   .controller('listingCtrl', ['$scope', 'data', function($scope, data) {
     'use strict';
     $scope.title = 'Technology News';
