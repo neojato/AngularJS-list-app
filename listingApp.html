@@ -27,13 +27,13 @@
         </div>
       </div>
       <ul>
-        <li data-ng-repeat="article in articles | newsFilter: filters | orderBy:'pubDate':descending | limitTo: viewLimit">
+        <li data-ng-repeat="article in filtered = (articles | newsFilter: filters) | orderBy:'pubDate':descending | limitTo: viewLimit">
           <h2>{{article.title}}</h2>
           <p>{{article.pubDate | date:'dd/MM/yy'}}</p>
           <p>{{article.description}}</p>
         </li>
       </ul>
-      <button data-ng-click="viewMore(8)" data-ng-hide="viewLimit >= articles.length">view more</button>
+      <button class="btn" data-ng-click="viewMore(8)" data-ng-hide="viewLimit >= filtered.length">view more</button>
     </section>
   </body>
 </html>
