@@ -11,4 +11,5 @@ angular.module('listing.module', ['listing.services'])
     $scope.viewMore = function(num) {
       $scope.viewLimit += num;
     };
+    $scope.descending = true;
   }]);

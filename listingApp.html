@@ -11,6 +11,13 @@
   <body data-ng-app="listingApp">
     <section data-ng-controller="listingCtrl">
       <h1>{{title}}</h1>
+      <div class="controls">
+        <label for="sortBy">Sort by</label>
+        <select id="sortBy" data-ng-model="descending">
+          <option value="true">Newest first</option>
+          <option value="false">Oldest first</option>
+        </select>
+      </div>
       <ul>
         <li data-ng-repeat="article in articles | orderBy:'pubDate':true | limitTo: viewLimit">
           <h2>{{article.title}}</h2>
