@@ -12,7 +12,7 @@
     <section data-ng-controller="listingCtrl">
       <h1>{{title}}</h1>
       <ul>
-        <li data-ng-repeat="article in articles">
+        <li data-ng-repeat="article in articles | orderBy:'pubDate':true | limitTo: viewLimi">
           <h2>{{article.title}}</h2>
           <p>{{article.pubDate | date:'dd/MM/yy'}}</p>
           <p>{{article.description}}</p>
