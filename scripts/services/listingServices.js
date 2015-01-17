@@ -1,5 +1,5 @@
 angular.module('listing.services', [])
-  .services('data', ['$http', function($http) {
+  .service('data', ['$http', function($http) {
     'use strict';
     this.get = function(url, callback) {
       $http({ method: 'GET', url: url })

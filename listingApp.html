@@ -4,10 +4,19 @@
     <meta charset="utf-8" />
     <title>Angular Listing App</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="scripts/services/listingServices.js"></script>
+    <script src="scripts/modules/listing.js"></script>
+    <script src="scripts/myApp.js"></script>
   </head>
   <body data-ng-app="listingApp">
     <section data-ng-controller="listingCtrl">
       <h1>{{title}}</h1>
+      <ul>
+        <li data-ng-repeat="article in articles">
+          <h2>{{article.title}}</h2>
+          <p>{{article.description}}</p>
+        </li>
+      </ul>
     </section>
   </body>
 </html>
