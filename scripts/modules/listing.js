@@ -8,4 +8,7 @@ angular.module('listing.module', ['listing.services'])
     };
     data.get('scripts/data/articles.json', $scope.setData);
     $scope.viewLimit = 4;
+    $scope.viewMore = function(num) {
+      $scope.viewLimit += num;
+    };
   }]);
