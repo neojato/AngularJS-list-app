@@ -1,0 +1,1 @@
+var myApp = angular.module('listingApp', ['listing.module']);
