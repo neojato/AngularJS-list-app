@@ -1,8 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en" xmls="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>Angular Listing App</title>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" media="screen" />
+    <link href="css/styles.css" rel="stylesheet" media="screen" />
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="scripts/services/listingServices.js"></script>
     <script src="scripts/filters/listingFilters.js"></script>
@@ -11,7 +15,9 @@
   </head>
   <body data-ng-app="listingApp">
     <section data-ng-controller="listingCtrl">
-      <h1>{{title}}</h1>
+      <div class="page-header">
+        <h1>{{title}}</h1>
+      </div>
       <div class="controls">
         <input type="text" data-ng-model="filters.query" placeholder="search news" />
         <label for="sortBy">Sort by</label>
@@ -26,7 +32,7 @@
           </div>
         </div>
       </div>
-      <p>{{filtered.length}} articles of {{articles.length}} match your search.</p>
+      <p class="clear">{{filtered.length}} articles of {{articles.length}} match your search.</p>
       <ul>
         <li data-ng-repeat="article in filtered = (articles | newsFilter: filters) | orderBy:'pubDate':descending | limitTo: viewLimit">
           <h2>{{article.title}}</h2>
