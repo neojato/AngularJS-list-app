@@ -37,4 +37,7 @@ angular.module('listing.module', ['listing.services', 'listing.filters'])
         }
       ]
     };
+  }])
+  .run(['$rootScope', function($rootScope) {
+    $rootScope.testValue = 'I am in rootScope';
   }]);
