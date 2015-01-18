@@ -1,5 +1,5 @@
 angular.module('listing.module', ['listing.services', 'listing.filters'])
-  .controller('listingCtrl', ['$scope', 'data', function($scope, data) {
+  .controller('listingCtrl', ['$scope', 'data', '$rootScope', function($scope, data, $rootScope) {
     'use strict';
     $scope.title = 'Technology News';
     $scope.setData = function(data) {
