@@ -38,6 +38,9 @@ angular.module('listing.module', ['listing.services', 'listing.filters'])
       ]
     };
   }])
+  .controller('testCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+    $scope.dataFromRoot = $rootScope.testValue;
+  }])
   .run(['$rootScope', function($rootScope) {
     $rootScope.testValue = 'I am in rootScope';
   }]);
